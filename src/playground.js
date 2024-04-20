@@ -1,5 +1,5 @@
-const hasCatsOrDogs = (str) => {
-    return /[cat, dog]/i.test(str)
+const fixFileName = (str) => {
+    return str.replace(/\s+/g, '_')
   };
 
-console.log(hasCatsOrDogs('cat'))
+  console.log(fixFileName("hello  world"))

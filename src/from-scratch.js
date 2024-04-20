@@ -35,23 +35,41 @@ const isValidPhoneNumber = (str) => {
 };
 
 const matchAllNumbers = (str) => {
-  let regex = /\d+/g
-  let match = str.match(regex)
+  let match = str.match(/\d+/g)
   return match === null? [] : match;
    
 }
 
-const matchAllNumbersAsNumbers = (str) => {};
+const matchAllNumbersAsNumbers = (str) => {
+  //regex to test for all numbers
+  const arr = str.match( /\d+/g) || []
+  //if arr is falsy return an empty string
+  //if(!arr) return []
+  //apply the number function to convert each element in the array to numbers.
+  return arr.map(Number)
+};
 
-const matchAllWords = (str) => {};
+const matchAllWords = (str) => {
+  //shout out ryan!
+  const arr = str.match(/[a-z']+/gi) || []
+  return arr
+};
 
-const replaceAllNumbers = (str) => {};
+const replaceAllNumbers = (str) => {
+  return str.replace(/\d+/g, "???")
+};
 
-const fixFileName = (str) => {};
+const fixFileName = (str) => {
+  return str.replace(/\s+/g, '_')
+};
 
-const nameRedacter = (str) => {};
+const nameRedacter = (str) => {
+  return str.replace(/[A-Z]{2,}/g, "REDACTED")
+};
 
-const camelToSnakeCase = (str) => {};
+const camelToSnakeCase = (str) => {
+  return str.replace(/([a-z])([A-Z])/g, '$1_$2').toLowerCase();
+};
 
 module.exports = {
   helloWorldRegex,
