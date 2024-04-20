@@ -1,22 +1,45 @@
-const helloWorldRegex = (str) => {};
+const helloWorldRegex = (str) => {
+  return /^hello world/i.test(str)
+};
 
-const hasAVowel = (str) => {};
+const hasAVowel = (str) => {
+  return /[aieou]/i.test(str)
+};
 
-const hasCatsOrDogs = (str) => {};
+const hasCatsOrDogs = (str) => {
+  return /(cats|dogs)/i.test(str)
+};
 
-const hasVowelStart = (str) => {};
+const hasVowelStart = (str) => {
+  return /^[aeiou]/i.test(str)
+};
 
-const hasPunctuationEnd = (str) => {};
+const hasPunctuationEnd = (str) => {
+  return /[.?!]$/i.test(str)
+};
 
-const hasNothingOrDigits = (str) => {};
+const hasNothingOrDigits = (str) => {
+  return /^(\s*|\d+)$/.test(str)
+};
 
-const hasNoFlippers = (str) => {};
+const hasNoFlippers = (str) => {
+  return /^[^BCcDEHIKOoXxl]*$/.test(str)
+};
 
-const isValidEmail = (str) => {};
+const isValidEmail = (str) => {
+  return /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/.test(str)
+};
 
-const isValidPhoneNumber = (str) => {};
+const isValidPhoneNumber = (str) => {
+  return /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/.test(str)
+};
 
-const matchAllNumbers = (str) => {};
+const matchAllNumbers = (str) => {
+  let regex = /\d+/g
+  let match = str.match(regex)
+  return match === null? [] : match;
+   
+}
 
 const matchAllNumbersAsNumbers = (str) => {};
 
